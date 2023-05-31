@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:walikelas_ummar/app/modules/dashboard/dashboard.dart';
+import 'package:walikelas_ummar/app/modules/forgotlogin/forgotlogin.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -29,7 +31,7 @@ class Body extends StatelessWidget {
               child: Container(
                 height: constraints.maxHeight * 0.4,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 151, 140, 140),
+                  color: Color(0xffD9D9D9),
                 ),
                 alignment: Alignment.topLeft,
                 child: Padding(
@@ -42,7 +44,7 @@ class Body extends StatelessWidget {
                         height: constraints.maxHeight * 0.1,
                       ),
                       Image.asset(
-                        'assets/image/logou.png',
+                        'assets/images/logoummar.png',
                         width: constraints.maxWidth,
                         height: constraints.maxHeight * 0.3,
                         fit: BoxFit.contain,
@@ -67,38 +69,59 @@ class Body extends StatelessWidget {
                     color: Color(0xffF9F9F9),
                   ),
                   child: Column(children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: constraints.maxHeight * 0.06,
-                        right: constraints.maxWidth * 0.1,
-                      ),
-                      child: Text(
-                        'Assalamualaikum,',
-                        style: GoogleFonts.poppins(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: constraints.maxWidth * 0.06,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 50,
                         ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: constraints.maxHeight * 0.00,
-                        right: constraints.maxWidth * 0.1,
-                      ),
-                      child: Text(
-                        'Silahkan masuk dengan akun anda,',
-                        style: GoogleFonts.poppins(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w400,
-                          fontSize: constraints.maxWidth * 0.03,
+                        Text(
+                          'Assalamualaikum,',
+                          style: GoogleFonts.poppins(
+                            fontSize: 24,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
+                        Text(
+                          'Silahkan masuk dengan akun anda,',
+                          style: GoogleFonts.poppins(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: constraints.maxWidth * 0.75,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffEFEFEF),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: 1.0,
+                            ),
+                          ),
+                          child: const TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Email',
+                              contentPadding: EdgeInsets.only(left: 10, top: 7),
+                              hintStyle: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: constraints.maxHeight * 0.02),
+                      ],
                     ),
-                    SizedBox(height: constraints.maxHeight * 0.02),
                     Container(
                       width: constraints.maxWidth * 0.75,
-                      height: constraints.maxHeight * 0.07,
+                      height: 60,
                       decoration: BoxDecoration(
                         color: const Color(0xffEFEFEF),
                         borderRadius: BorderRadius.circular(10),
@@ -108,31 +131,17 @@ class Body extends StatelessWidget {
                         ),
                       ),
                       child: const TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Email',
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 15),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: constraints.maxHeight * 0.02),
-                    Container(
-                      width: constraints.maxWidth * 0.75,
-                      height: constraints.maxHeight * 0.07,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffEFEFEF),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          color: Colors.grey,
-                          width: 1.0,
-                        ),
-                      ),
-                      child: const TextField(
-                        obscureText: true,
                         decoration: InputDecoration(
                           hintText: 'Password',
+                          contentPadding: EdgeInsets.only(left: 10, top: 7),
+                          hintStyle: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                          ),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 15),
+                          // contentPadding: EdgeInsets.symmetric(
+                          //   horizontal: 15,
+                          // ),
                         ),
                       ),
                     ),
@@ -144,20 +153,19 @@ class Body extends StatelessWidget {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
-                            padding: EdgeInsets.only(
-                                right: constraints.maxWidth * 0.1),
+                            padding: const EdgeInsets.only(right: 50),
                             child: GestureDetector(
                               onTap: () {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //     builder: (context) => Lupapw(),
-                                //   ),
-                                // );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ForgotLogin()),
+                                );
                               },
-                              child: const Text(
+                              child: Text(
                                 'Lupa Password?',
-                                style: TextStyle(
+                                style: GoogleFonts.poppins(
                                   color: Colors.black,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -170,10 +178,12 @@ class Body extends StatelessWidget {
                     SizedBox(height: constraints.maxHeight * 0.02),
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(builder: (context) => Dashboard()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Dashboard(),
+                          ),
+                        );
                       },
                       child: Container(
                         width: constraints.maxWidth * 0.75,
@@ -185,16 +195,15 @@ class Body extends StatelessWidget {
                         child: Center(
                           child: Text(
                             'Masuk',
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
+                              fontSize: 20,
                               color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: constraints.maxWidth * 0.045,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(height: constraints.maxHeight * 0.04),
                   ]),
                 ),
               ),

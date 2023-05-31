@@ -27,57 +27,30 @@ class Introduction extends StatelessWidget {
         return IntroductionScreen(
           globalBackgroundColor: Colors.white,
           pages: [
-          PageViewModel(
-  title: 'Lihat Nilai',
-  body: 'Lihat nilai putra putri Anda dengan mudah menggunakan aplikasi ini.',
-  decoration: pageDecoration,
-  image: Stack(
-    alignment: Alignment.topCenter,
-    children: [
-      // Positioned(
-      //   top: constraints.maxHeight * 0.05,
-      //   left: constraints.maxWidth * 0.05,
-      //   child: Image.asset(
-      //     'assets/image/logou.png',
-      //     width: constraints.maxWidth * 0.25,
-      //     height: constraints.maxWidth * 0.25,  
-      //   ),
-      // ),
-      Image.asset(
-        'assets/image/Group3.png',
-        width: constraints.maxWidth * 0.8,
-        height: constraints.maxHeight * 0.6,
-        fit: BoxFit.fill,
-      ),
-    ],
-  ),
-),
-
             PageViewModel(
-              title: 'Ikut Serta Dalam Penilaian',
-              body:
-                  'Ikut serta dalam penilaian pembelajaran anak? Dengan aplikasi ini Anda para orang tua bisa ikut serta dalam penilaian pembelajaran anak secara mudah.',
+              title: 'Permudah Mengajar',
+              body: 'memberikan kemudahan dalam proses\nmengajar.',
               decoration: pageDecoration,
               image: Stack(
                 alignment: Alignment.topLeft,
                 children: [
                   Image.asset(
-                    'assets/image/Group2.png',
+                    'assets/images/introSatu.png',
                     width: constraints.maxWidth * 0.9,
                   ),
                 ],
               ),
             ),
             PageViewModel(
-              title: 'Pantau Progres dan Perkembangan Anak',
+              title: 'Lebih mudah dan\nEfektif ',
               body:
-                  'Membantu Anda dalam memantau progres dan perkembangan anak dengan mudah.',
+                  'Lebih mudah dan efektif dalam memberikan\ntugas dan memantau tugas peserta didik.',
               decoration: pageDecoration,
               image: Stack(
                 alignment: Alignment.topLeft,
                 children: [
                   Image.asset(
-                    'assets/image/Group1.png',
+                    'assets/images/introDua.png',
                     width: constraints.maxWidth * 0.9,
                   ),
                 ],
@@ -119,8 +92,8 @@ class Introduction extends StatelessWidget {
             ),
           ),
           done: Container(
-            width: constraints.maxWidth * 0.2,
-            height: constraints.maxWidth * 0.1,
+            width: 120,
+            height: 50,
             decoration: BoxDecoration(
               color: const Color(0xffE08008),
               borderRadius: BorderRadius.circular(10),
