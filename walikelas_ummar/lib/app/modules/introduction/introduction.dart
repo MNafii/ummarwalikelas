@@ -80,8 +80,8 @@ class Introduction extends StatelessWidget {
             ),
           ),
           next: Container(
-            width: constraints.maxWidth * 0.1,
-            height: constraints.maxWidth * 0.1,
+            width: 80,
+            height: 60,
             decoration: BoxDecoration(
               color: const Color(0xffE08008),
               borderRadius: BorderRadius.circular(24),

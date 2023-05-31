@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:walikelas_ummar/app/modules/dashboard/dashboard.dart';
+import 'package:walikelas_ummar/app/modules/page1/dashboard/dashboard.dart';
 import 'package:walikelas_ummar/app/modules/forgotlogin/forgotlogin.dart';
 
 class Login extends StatelessWidget {
@@ -181,7 +181,7 @@ class Body extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Dashboard(),
+                            builder: (context) => Dashboard(),
                           ),
                         );
                       },
