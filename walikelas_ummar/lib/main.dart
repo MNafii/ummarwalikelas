@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:walikelas_ummar/app/modules/home/home.dart';
-import 'package:walikelas_ummar/app/modules/page1/dashboard/dashboard.dart';
-import 'package:walikelas_ummar/app/modules/introduction/introduction.dart';
+
+import 'app/modules/page interface/introduction/introduction.dart';
+
 
 void main() {
   runApp(const MyApp());

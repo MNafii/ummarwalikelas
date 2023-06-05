@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:walikelas_ummar/app/modules/login/login.dart';
+import '../login/login.dart';
+
+
 
 class ForgotLogin extends StatelessWidget {
   const ForgotLogin({super.key});

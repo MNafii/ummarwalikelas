@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:walikelas_ummar/app/modules/page2/agenda/agenda.dart';
+import 'package:walikelas_ummar/app/modules/page2/kalender/kalender.dart';
+import 'package:walikelas_ummar/app/modules/page2/pengumuman/pengumuman.dart';
 import '../../../color/app_color.dart';
 
 // ignore: must_be_immutable
@@ -322,11 +325,11 @@ class Dashboard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => nilaidasar()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Pengumuman()),
+                      );
                     },
                     child: Container(
                       width: 70,
@@ -373,11 +376,10 @@ class Dashboard extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => nilaidasar()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Kalender()),
+                      );
                     },
                     child: Container(
                       width: 70,
@@ -414,11 +416,11 @@ class Dashboard extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => nilaidasar()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Agenda()),
+                      );
                     },
                     child: Container(
                       width: 70,
