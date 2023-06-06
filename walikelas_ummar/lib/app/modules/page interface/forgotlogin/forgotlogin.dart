@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:walikelas_ummar/app/modules/login/login.dart';
+import '../login/login.dart';
+
+
 
 class ForgotLogin extends StatelessWidget {
   const ForgotLogin({super.key});
@@ -163,17 +165,17 @@ class Body extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Login()),
+                            MaterialPageRoute(builder: (context) => const Login()),
                           );
                         },
                         child: Container(
                           width: constraints.maxWidth * 0.08,
                           height: constraints.maxWidth * 0.08,
                           decoration: BoxDecoration(
-                            color: Color(0xffE08008),
+                            color: const Color(0xffE08008),
                             borderRadius: BorderRadius.circular(24),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back,
                             color: Colors.white,
                           ),

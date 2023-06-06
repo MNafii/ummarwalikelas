@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:walikelas_ummar/app/modules/login/login.dart';
+
+import '../login/login.dart';
 
 class Introduction extends StatelessWidget {
   const Introduction({Key? key}) : super(key: key);
@@ -80,8 +81,8 @@ class Introduction extends StatelessWidget {
             ),
           ),
           next: Container(
-            width: constraints.maxWidth * 0.1,
-            height: constraints.maxWidth * 0.1,
+            width: 80,
+            height: 60,
             decoration: BoxDecoration(
               color: const Color(0xffE08008),
               borderRadius: BorderRadius.circular(24),
