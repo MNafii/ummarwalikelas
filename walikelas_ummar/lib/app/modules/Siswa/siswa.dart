@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../dashboard/dashboard.dart';
+import 'package:walikelas_ummar/app/modules/page1/dashboard/dashboard.dart';
 
 class siswa extends StatelessWidget {
   @override

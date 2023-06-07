@@ -40,14 +40,14 @@ class _CalendarPageState extends State<Kalender> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Kritik Saran',
+                  'Tugas',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w700,
                       fontSize: 18,
                       color: Colors.black),
                 ),
                 Text(
-                  'Kirimkan Kritik dan Saran Anda',
+                  'Kelas 5',
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
@@ -125,7 +125,83 @@ class _CalendarPageState extends State<Kalender> {
                 ),
               ),
               availableGestures: AvailableGestures.all,
-              onDaySelected: _onDaySelected,
+              onDaySelected: (selectedDay, focusedDay) {
+                if (selectedDay.day == 5) {
+                  // Cek apakah tanggal yang dipilih adalah tanggal 5
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                width: 45,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Colors.blue,
+                                ),
+                                padding: EdgeInsets.only(
+                                  right: 5,
+                                  left: 10,
+                                  top: 9,
+                                  bottom: 5,
+                                ),
+                                child: Text(
+                                  '5',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 15),
+                              Text(
+                                '13 Maret 2023: Penilaian Akhir Semester Ganjil',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 15,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                width: double.infinity,
+                                child: Center(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      color: Color.fromARGB(255, 33, 243, 33),
+                                    ),
+                                    child: TextButton(
+                                      child: Text(
+                                        'Kembali',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                }
+              },
               selectedDayPredicate: (day) => isSameDay(day, today),
             ),
           ),
