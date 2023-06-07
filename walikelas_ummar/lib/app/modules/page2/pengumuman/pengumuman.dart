@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:walikelas_ummar/app/color/app_color.dart';
 import 'package:walikelas_ummar/app/modules/home/home.dart';
 import 'package:walikelas_ummar/app/modules/page2/pengumuman/pengumumanLanjutan/pengumumanLanjutan.dart';
 
@@ -55,7 +54,7 @@ class Pengumuman extends StatelessWidget {
                         fontSize: 18,
                       ),
                     ),
-                    SizedBox(height: 1),
+                    const SizedBox(height: 1),
                     Text(
                       'Jumat, 7 Maret 2023',
                       style: GoogleFonts.poppins(
@@ -137,7 +136,7 @@ class Pengumuman extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Padding(padding: EdgeInsets.only(top: 10)),
+                        const Padding(padding: EdgeInsets.only(top: 10)),
                         Align(
                           alignment: Alignment.topRight,
                           child: Text(
@@ -148,7 +147,7 @@ class Pengumuman extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 1),
+                        const SizedBox(height: 1),
                         Text(
                           'Belum Dilihat',
                           style: GoogleFonts.poppins(
@@ -168,7 +167,7 @@ class Pengumuman extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 10,
                               top: 5,
                             ),
@@ -238,7 +237,7 @@ class Pengumuman extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         left: 10,
                       ),
                       child: Text(
@@ -252,7 +251,7 @@ class Pengumuman extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Padding(padding: EdgeInsets.only(top: 10)),
+                        const Padding(padding: EdgeInsets.only(top: 10)),
                         Align(
                           alignment: Alignment.topRight,
                           child: Text(
@@ -263,7 +262,7 @@ class Pengumuman extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 1),
+                        const SizedBox(height: 1),
                         Text(
                           'Sudah Dilihat',
                           style: GoogleFonts.poppins(
@@ -283,7 +282,7 @@ class Pengumuman extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 10,
                               top: 5,
                             ),
