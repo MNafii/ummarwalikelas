@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:walikelas_ummar/app/modules/home/home.dart';
+import 'package:walikelas_ummar/app/modules/page2/tugas/adaTugas/adaTugas.dart';
 
 import '../../../color/app_color.dart';
 
 // ignore: use_key_in_widget_constructors
-class Kalender extends StatefulWidget {
+class Tugas extends StatefulWidget {
   @override
   // ignore: library_private_types_in_public_api
   _CalendarPageState createState() => _CalendarPageState();
 }
 
-class _CalendarPageState extends State<Kalender> {
+class _CalendarPageState extends State<Tugas> {
   DateTime today = DateTime.now();
   void _onDaySelected(DateTime day, DateTime focusedDay) {
     setState(() {
@@ -89,7 +90,6 @@ class _CalendarPageState extends State<Kalender> {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 300,
             child: TableCalendar(
               // onDayLongPressed: ,
               calendarStyle: CalendarStyle(
@@ -125,83 +125,7 @@ class _CalendarPageState extends State<Kalender> {
                 ),
               ),
               availableGestures: AvailableGestures.all,
-              onDaySelected: (selectedDay, focusedDay) {
-                if (selectedDay.day == 5) {
-                  // Cek apakah tanggal yang dipilih adalah tanggal 5
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return Dialog(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Container(
-                          padding: EdgeInsets.all(20),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Container(
-                                width: 45,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: Colors.blue,
-                                ),
-                                padding: EdgeInsets.only(
-                                  right: 5,
-                                  left: 10,
-                                  top: 9,
-                                  bottom: 5,
-                                ),
-                                child: Text(
-                                  '5',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 15),
-                              Text(
-                                '13 Maret 2023: Penilaian Akhir Semester Ganjil',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 15,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(height: 20),
-                              Container(
-                                width: double.infinity,
-                                child: Center(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15),
-                                      color: Color.fromARGB(255, 33, 243, 33),
-                                    ),
-                                    child: TextButton(
-                                      child: Text(
-                                        'Kembali',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }
-              },
+              onDaySelected: _onDaySelected,
               selectedDayPredicate: (day) => isSameDay(day, today),
             ),
           ),
@@ -218,25 +142,35 @@ class _CalendarPageState extends State<Kalender> {
                       fontSize: 15),
                 ),
                 const SizedBox(height: 8.0),
-                Row(
-                  children: [
-                    Container(
-                      width: 18.0,
-                      height: 50.0,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.redAccent,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TugasSelesai(),
                       ),
-                    ),
-                    const SizedBox(width: 8.0),
-                    Text(
-                      ':  Acara Sekolah',
-                      style: GoogleFonts.poppins(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15),
-                    ),
-                  ],
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 18.0,
+                        height: 50.0,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.greenAccent,
+                        ),
+                      ),
+                      const SizedBox(width: 8.0),
+                      Text(
+                        ':  Sudah Ada Tugas',
+                        style: GoogleFonts.poppins(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15),
+                      ),
+                    ],
+                  ),
                 ),
                 Row(
                   children: [
@@ -245,12 +179,12 @@ class _CalendarPageState extends State<Kalender> {
                       height: 50.0,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.blueAccent,
+                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(width: 8.0),
                     Text(
-                      ':   Hari Besar',
+                      ':  Belum Ada Tugass',
                       style: GoogleFonts.poppins(
                           color: Colors.black,
                           fontWeight: FontWeight.w500,

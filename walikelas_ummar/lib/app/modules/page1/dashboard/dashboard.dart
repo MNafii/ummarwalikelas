@@ -7,7 +7,10 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:walikelas_ummar/app/modules/page2/agenda/agenda.dart';
 import 'package:walikelas_ummar/app/modules/page2/kalender/kalender.dart';
 import 'package:walikelas_ummar/app/modules/page2/pengumuman/pengumuman.dart';
+import 'package:walikelas_ummar/app/modules/page2/tugas/tugas.dart';
 import '../../../color/app_color.dart';
+import '../../home/home copy.dart';
+import '../notifikasi/notifikasi.dart';
 
 // ignore: must_be_immutable
 class Dashboard extends StatelessWidget {
@@ -33,8 +36,8 @@ class Dashboard extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (context) => Profile()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Home1()));
                       },
                       child: ClipOval(
                         child: Container(
@@ -82,10 +85,10 @@ class Dashboard extends StatelessWidget {
                     icon: Icon(CupertinoIcons.bell),
                     color: Colors.black,
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => Notifikasi()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Notifikasi()),
+                      );
                     },
                   ),
                 ),
@@ -234,10 +237,10 @@ class Dashboard extends StatelessWidget {
           // Notifikasi
           GestureDetector(
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => Notifikasi()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Notifikasi()),
+              );
             },
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -327,8 +330,7 @@ class Dashboard extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => Pengumuman()),
+                        MaterialPageRoute(builder: (context) => Pengumuman()),
                       );
                     },
                     child: Container(
@@ -418,8 +420,7 @@ class Dashboard extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Agenda()),
+                        MaterialPageRoute(builder: (context) => const Agenda()),
                       );
                     },
                     child: Container(
@@ -467,11 +468,10 @@ class Dashboard extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => nilaidasar()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Tugas()),
+                      );
                     },
                     child: Container(
                       width: 70,
