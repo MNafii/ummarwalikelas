@@ -36,7 +36,6 @@ class _CalendarPageState extends State<Kalender> {
           padding: const EdgeInsets.only(top: 26, bottom: 40),
           child: Align(
             alignment: Alignment.centerRight,
-<<<<<<< HEAD
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -55,14 +54,6 @@ class _CalendarPageState extends State<Kalender> {
                       color: const Color(0xff9F9F9F)),
                 ),
               ],
-=======
-            child: Text(
-              'kalender Pendidikan',
-              style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Colors.black),
->>>>>>> 1f6d68e2699d489d4b688f1c3f711bde127b9b84
             ),
           ),
         ),

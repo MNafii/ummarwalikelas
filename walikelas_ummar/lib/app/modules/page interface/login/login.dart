@@ -5,7 +5,7 @@ import 'package:walikelas_ummar/app/modules/home/home.dart';
 import '../forgotlogin/forgotlogin.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  const Login({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,6 @@ class Login extends StatelessWidget {
   }
 }
 
-// ignore: use_key_in_widget_constructors
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class Body extends StatelessWidget {
         return Column(
           children: [
             Align(
-              alignment: Alignment.topCenter  ,
+              alignment: Alignment.topCenter,
               child: Container(
                 height: constraints.maxHeight * 0.4,
                 decoration: const BoxDecoration(
@@ -96,7 +95,7 @@ class Body extends StatelessWidget {
                         ),
                         Container(
                           width: constraints.maxWidth * 0.75,
-                          height: 60,
+                          height: 40,
                           decoration: BoxDecoration(
                             color: const Color(0xffEFEFEF),
                             borderRadius: BorderRadius.circular(10),
@@ -108,7 +107,10 @@ class Body extends StatelessWidget {
                           child: const TextField(
                             decoration: InputDecoration(
                               hintText: 'Email',
-                              contentPadding: EdgeInsets.only(left: 10, top: 7),
+                              contentPadding: EdgeInsets.only(
+                                left: 10,
+                                bottom: 7,
+                              ),
                               hintStyle: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w500,
@@ -122,7 +124,7 @@ class Body extends StatelessWidget {
                     ),
                     Container(
                       width: constraints.maxWidth * 0.75,
-                      height: 60,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: const Color(0xffEFEFEF),
                         borderRadius: BorderRadius.circular(10),
@@ -131,24 +133,7 @@ class Body extends StatelessWidget {
                           width: 1.0,
                         ),
                       ),
-                      child: TextField(
-                        // obscureText: controller.obsecureText.value,
-                        decoration: InputDecoration(
-                          suffixIcon: IconButton(
-                            icon: ,
-                          ),
-                          hintText: 'Password',
-                          contentPadding: EdgeInsets.only(left: 10, top: 7),
-                          hintStyle: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          border: InputBorder.none,
-                          // contentPadding: EdgeInsets.symmetric(
-                          //   horizontal: 15,
-                          // ),
-                        ),
-                      ),
+                      child: PasswordTextField(),
                     ),
                     SizedBox(height: constraints.maxHeight * 0.02),
                     Row(
@@ -216,6 +201,41 @@ class Body extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+}
+
+class PasswordTextField extends StatefulWidget {
+  @override
+  _PasswordTextFieldState createState() => _PasswordTextFieldState();
+}
+
+class _PasswordTextFieldState extends State<PasswordTextField> {
+  bool _obscureText = true;
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      obscureText: _obscureText,
+      decoration: InputDecoration(
+        suffixIcon: IconButton(
+          icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+          onPressed: _togglePasswordVisibility,
+        ),
+        hintText: 'Password',
+        contentPadding: EdgeInsets.only(left: 10, top: 7),
+        hintStyle: TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.w500,
+        ),
+        border: InputBorder.none,
+      ),
     );
   }
 }

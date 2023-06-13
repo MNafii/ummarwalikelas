@@ -3,14 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-<<<<<<< HEAD
+
 import 'package:walikelas_ummar/app/modules/page1/dashboard/dashboard.dart';
-=======
 import 'package:walikelas_ummar/app/modules/home/home.dart';
 
 class Siswa extends StatelessWidget {
   const Siswa({super.key});
->>>>>>> 1f6d68e2699d489d4b688f1c3f711bde127b9b84
 
   @override
   Widget build(BuildContext context) {
