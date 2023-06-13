@@ -96,13 +96,13 @@ class _CalendarPageState extends State<Tugas> {
               calendarStyle: CalendarStyle(
                 todayDecoration: BoxDecoration(
                   color: AppColor.secondPrimary,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(10),
+                  shape: BoxShape.circle,
+                  // borderRadius: BorderRadius.circular(10),
                 ),
                 isTodayHighlighted: true,
                 selectedDecoration: BoxDecoration(
                   color: AppColor.primary,
-                  shape: BoxShape.rectangle,
+                  shape: BoxShape.circle,
                   // borderRadius: BorderRadius.circular(5),
                 ),
               ),

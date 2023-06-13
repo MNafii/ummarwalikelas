@@ -43,8 +43,10 @@ dependencies:
   image_picker: ^0.8.7+5
   file_picker: ^5.3.1
   table_calendar: ^3.0.9
-  smooth_page_indicator: ^1.1.0
+  datetime_extension: ^0.0.1
 
+  smooth_page_indicator: ^1.1.0
+  raised_buttons: ^0.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -36,12 +38,24 @@ class _CalendarPageState extends State<Kalender> {
           padding: const EdgeInsets.only(top: 26, bottom: 40),
           child: Align(
             alignment: Alignment.centerRight,
-            child: Text(
-              'kalender Pendidikan',
-              style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Colors.black),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  'Tugas',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 18,
+                      color: Colors.black),
+                ),
+                Text(
+                  'Kelas 5',
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13,
+                      color: const Color(0xff9F9F9F)),
+                ),
+              ],
             ),
           ),
         ),
@@ -112,7 +126,91 @@ class _CalendarPageState extends State<Kalender> {
                 ),
               ),
               availableGestures: AvailableGestures.all,
-              onDaySelected: _onDaySelected,
+              onDaySelected: (selectedDay, focusedDay) {
+                // selectedDay.day == 7;
+
+                if (selectedDay.day == 13 &&
+                    selectedDay.month == 6 &&
+                    selectedDay.year == 2023) {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Dialog(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Container(
+                                width: 45,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Colors.blue,
+                                ),
+                                padding: const EdgeInsets.only(
+                                  right: 5,
+                                  left: 10,
+                                  top: 9,
+                                  bottom: 5,
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.only(left: 6),
+                                  child: Text(
+                                    '5',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 15),
+                              Text(
+                                '5 Maret 2023: Penilaian Akhir Semester Ganjil',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 15,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 20),
+                              // ignore: sized_box_for_whitespace
+                              Container(
+                                width: double.infinity,
+                                child: Center(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      color: const Color.fromARGB(
+                                          255, 33, 243, 33),
+                                    ),
+                                    child: TextButton(
+                                      child: Text(
+                                        'Kembali',
+                                        style: GoogleFonts.poppins(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                }
+              },
               selectedDayPredicate: (day) => isSameDay(day, today),
             ),
           ),

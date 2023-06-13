@@ -5,7 +5,8 @@ import 'package:walikelas_ummar/app/modules/home/home.dart';
 import '../forgotlogin/forgotlogin.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  // ignore: use_key_in_widget_constructors
+  const Login({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +97,7 @@ class Body extends StatelessWidget {
                         ),
                         Container(
                           width: constraints.maxWidth * 0.75,
-                          height: 60,
+                          height: 40,
                           decoration: BoxDecoration(
                             color: const Color(0xffEFEFEF),
                             borderRadius: BorderRadius.circular(10),
@@ -108,7 +109,10 @@ class Body extends StatelessWidget {
                           child: const TextField(
                             decoration: InputDecoration(
                               hintText: 'Email',
-                              contentPadding: EdgeInsets.only(left: 10, top: 7),
+                              contentPadding: EdgeInsets.only(
+                                left: 10,
+                                bottom: 7,
+                              ),
                               hintStyle: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w500,
@@ -122,7 +126,7 @@ class Body extends StatelessWidget {
                     ),
                     Container(
                       width: constraints.maxWidth * 0.75,
-                      height: 60,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: const Color(0xffEFEFEF),
                         borderRadius: BorderRadius.circular(10),
@@ -131,20 +135,7 @@ class Body extends StatelessWidget {
                           width: 1.0,
                         ),
                       ),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Password',
-                          contentPadding: EdgeInsets.only(left: 10, top: 7),
-                          hintStyle: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          border: InputBorder.none,
-                          // contentPadding: EdgeInsets.symmetric(
-                          //   horizontal: 15,
-                          // ),
-                        ),
-                      ),
+                      child: PasswordTextField(),
                     ),
                     SizedBox(height: constraints.maxHeight * 0.02),
                     Row(
@@ -212,6 +203,43 @@ class Body extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+}
+
+// ignore: use_key_in_widget_constructors
+class PasswordTextField extends StatefulWidget {
+  @override
+  // ignore: library_private_types_in_public_api
+  _PasswordTextFieldState createState() => _PasswordTextFieldState();
+}
+
+class _PasswordTextFieldState extends State<PasswordTextField> {
+  bool _obscureText = true;
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      obscureText: _obscureText,
+      decoration: InputDecoration(
+        suffixIcon: IconButton(
+          icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+          onPressed: _togglePasswordVisibility,
+        ),
+        hintText: 'Password',
+        contentPadding: const EdgeInsets.only(left: 10, top: 7),
+        hintStyle: const TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.w500,
+        ),
+        border: InputBorder.none,
+      ),
     );
   }
 }
