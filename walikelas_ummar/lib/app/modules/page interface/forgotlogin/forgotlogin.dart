@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../home/home.dart';
 import '../login/login.dart';
-
-
 
 class ForgotLogin extends StatelessWidget {
   const ForgotLogin({super.key});
@@ -63,7 +62,7 @@ class Body extends StatelessWidget {
                 child: Stack(
                   children: [
                     Container(
-                      height: constraints.maxHeight * 0.6,
+                      // height: constraints.maxHeight * 0.6,
                       width: constraints.maxWidth,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -155,6 +154,34 @@ class Body extends StatelessWidget {
                             ),
                           ),
                           SizedBox(height: constraints.maxHeight * 0.02),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Home(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: constraints.maxWidth * 0.75,
+                              height: constraints.maxHeight * 0.07,
+                              decoration: BoxDecoration(
+                                color: const Color(0xffE08008),
+                                borderRadius: BorderRadius.circular(40),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Kirim',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -165,7 +192,8 @@ class Body extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const Login()),
+                            MaterialPageRoute(
+                                builder: (context) => const Login()),
                           );
                         },
                         child: Container(

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:walikelas_ummar/app/modules/Siswa/siswa.dart';
 import 'package:walikelas_ummar/app/modules/page interface/introduction/introduction.dart';
-import 'package:walikelas_ummar/app/modules/home/home.dart';
+import 'package:walikelas_ummar/app/modules/page2/tugas/belumAdaTugas/tugassiswa.dart';
+import 'package:walikelas_ummar/tes.dart';
 
-import 'app/modules/page interface/introduction/introduction.dart';
-
+// import 'package:walikelas_ummar/app/modules/home/home.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Home(),
+      home: const Splash(),
     );
   }
 }

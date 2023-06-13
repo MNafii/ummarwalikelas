@@ -1,18 +1,21 @@
+// ignore_for_file: camel_case_types, sort_child_properties_last
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:walikelas_ummar/app/modules/home/home.dart';
 
-import '../dashboard/dashboard.dart';
+class Siswa extends StatelessWidget {
+  const Siswa({super.key});
 
-class siswa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           Container(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               top: 30,
               right: 10,
               left: 10,
@@ -24,17 +27,17 @@ class siswa extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Dashboard()),
+                      MaterialPageRoute(builder: (context) => const Home()),
                     );
                   },
                   child: Container(
                     width: 30,
                     height: 30,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xffE08008),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
+                    child: const Icon(
                       CupertinoIcons.arrow_left,
                       color: Colors.white,
                       size: 15,
@@ -43,7 +46,7 @@ class siswa extends StatelessWidget {
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
+                  children: const [
                     Text(
                       'Siswa',
                       style: TextStyle(
@@ -66,7 +69,7 @@ class siswa extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
             child: Row(
               children: [
                 Expanded(
@@ -75,14 +78,14 @@ class siswa extends StatelessWidget {
                     width: 80,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Color(0xffB7B7B7),
+                        color: const Color(0xffB7B7B7),
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextField(
                       onChanged: (value) {},
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Cari Juz',
                         border: InputBorder.none,
                         prefixIcon: Icon(Icons.search),
@@ -96,13 +99,13 @@ class siswa extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: Padding(
-              padding: EdgeInsets.only(right: 2.5, left: 2.5),
+              padding: const EdgeInsets.only(right: 2.5, left: 2.5),
               child: Stack(
                 children: [
                   Container(
                     alignment: Alignment.center,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 20, left: 10),
+                      padding: const EdgeInsets.only(top: 20, left: 10),
                       child: Column(
                         children: [
                           Row(
@@ -119,7 +122,7 @@ class siswa extends StatelessWidget {
                                 image:
                                     Image.asset("assets/images/Ndas.png").image,
                               ),
-                              Padding(padding: EdgeInsets.only(left: 10)),
+                              const Padding(padding: EdgeInsets.only(left: 10)),
                               Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
@@ -140,7 +143,7 @@ class siswa extends StatelessWidget {
                                       fontSize: 13,
                                     ),
                                   ),
-                                  SizedBox(height: 5),
+                                  const SizedBox(height: 5),
                                 ],
                               ),
                             ],
@@ -158,7 +161,7 @@ class siswa extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.1),
                           spreadRadius: 5,
                           blurRadius: 7,
-                          offset: Offset(0, 1),
+                          offset: const Offset(0, 1),
                         ),
                       ],
                     ),
@@ -174,14 +177,14 @@ class siswa extends StatelessWidget {
                         height: 20,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Color(0xFF8F4552),
+                          color: const Color(0xFF8F4552),
                           boxShadow: [
                             BoxShadow(
-                              color: Color.fromARGB(255, 189, 189, 189)
+                              color: const Color.fromARGB(255, 189, 189, 189)
                                   .withOpacity(0.5),
                               spreadRadius: 3,
                               blurRadius: 2,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
@@ -195,12 +198,12 @@ class siswa extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   child: Container(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.only(
+                                          padding: const EdgeInsets.only(
                                               right: 5,
                                               left: 10,
                                               top: 9,
@@ -213,21 +216,21 @@ class siswa extends StatelessWidget {
                                                 .image,
                                           ),
                                         ),
-                                        SizedBox(height: 10),
-                                        Container(
+                                        const SizedBox(height: 10),
+                                        SizedBox(
                                           width: double.infinity,
                                           child: Center(
-                                            child: Container(
+                                            child: SizedBox(
                                               width: 220,
                                               height: 200,
                                               child: Padding(
-                                                padding: EdgeInsets.all(5.0),
+                                                padding: const EdgeInsets.all(5.0),
                                                 child: Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'Nama              : ',
                                                           style: TextStyle(
@@ -245,9 +248,9 @@ class siswa extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'NIS                  : ',
                                                           style: TextStyle(
@@ -265,9 +268,9 @@ class siswa extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'Tempat Lahir : ',
                                                           style: TextStyle(
@@ -285,9 +288,9 @@ class siswa extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'Tanngal Lahir: ',
                                                           style: TextStyle(
@@ -305,9 +308,9 @@ class siswa extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'Nama Wali    : ',
                                                           style: TextStyle(
@@ -325,9 +328,9 @@ class siswa extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'Nomer Wali   : ',
                                                           style: TextStyle(
@@ -345,9 +348,9 @@ class siswa extends StatelessWidget {
                                                         ),
                                                       ],
                                                     ),
-                                                    SizedBox(height: 5),
+                                                    const SizedBox(height: 5),
                                                     Row(
-                                                      children: [
+                                                      children: const [
                                                         Text(
                                                           'Alamat Wali  :',
                                                           style: TextStyle(
@@ -371,8 +374,8 @@ class siswa extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(height: 15),
-                                        Container(
+                                        const SizedBox(height: 15),
+                                        SizedBox(
                                           width: double.infinity,
                                           child: Center(
                                             child: Container(
@@ -381,12 +384,12 @@ class siswa extends StatelessWidget {
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(15),
-                                                color: Color(0xFFE08008),
+                                                color: const Color(0xFFE08008),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: TextButton(
-                                                  child: Container(
+                                                  child: const SizedBox(
                                                     width: double.infinity,
                                                     height: double.infinity,
                                                     child: Center(
@@ -416,7 +419,7 @@ class siswa extends StatelessWidget {
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,
                           ),
-                          child: Text(
+                          child: const Text(
                             'Detail >',
                             style: TextStyle(
                               fontSize: 12,

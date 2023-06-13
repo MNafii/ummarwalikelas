@@ -34,7 +34,8 @@ class Notifikasi extends StatelessWidget {
             height: 30,
             child: InkWell(
                 onTap: () {
-                  Navigator.push(context,
+                  Navigator.push(
+                    context,
                       MaterialPageRoute(builder: (context) => const Home()));
                 },
                 child: Ink(

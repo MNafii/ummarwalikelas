@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:walikelas_ummar/app/modules/home/home.dart';
 import 'package:walikelas_ummar/app/modules/page2/tugas/adaTugas/adaTugas.dart';
+import 'package:walikelas_ummar/app/modules/page2/tugas/belumAdaTugas/tugassiswa.dart';
 
 import '../../../color/app_color.dart';
 
@@ -172,25 +173,35 @@ class _CalendarPageState extends State<Tugas> {
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    Container(
-                      width: 18.0,
-                      height: 50.0,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TambahTugas(),
                       ),
-                    ),
-                    const SizedBox(width: 8.0),
-                    Text(
-                      ':  Belum Ada Tugass',
-                      style: GoogleFonts.poppins(
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 18.0,
+                        height: 50.0,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
                           color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15),
-                    ),
-                  ],
+                        ),
+                      ),
+                      const SizedBox(width: 8.0),
+                      Text(
+                        ':  Belum Ada Tugas',
+                        style: GoogleFonts.poppins(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
