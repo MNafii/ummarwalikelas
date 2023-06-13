@@ -43,7 +43,11 @@ dependencies:
   image_picker: ^0.8.7+5
   file_picker: ^5.3.1
   table_calendar: ^3.0.9
+<<<<<<< HEAD
   datetime_extension: ^0.0.1
+=======
+  smooth_page_indicator: ^1.1.0
+>>>>>>> 1f6d68e2699d489d4b688f1c3f711bde127b9b84
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +76,7 @@ flutter:
     - assets/images/
     - assets/logos/
     - assets/pop/
+    - assets/shape/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

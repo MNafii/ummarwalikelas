@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:walikelas_ummar/app/modules/page1/profile/profile.dart';
@@ -14,8 +15,10 @@ class Home1 extends StatefulWidget {
 }
 
 class _HomeState extends State<Home1> {
-  int _selectedIndex = 0;
-  final PageController _pageController = PageController();
+  int _selectedIndex = 1;
+  final PageController _pageController = PageController(
+    initialPage: 1,
+  );
 
   @override
   void dispose() {

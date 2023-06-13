@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:walikelas_ummar/app/modules/page1/dashboard/dashboard.dart';
+import 'package:walikelas_ummar/app/modules/home/home.dart';
 
 import '../forgotlogin/forgotlogin.dart';
 
@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
         return Column(
           children: [
             Align(
-              alignment: Alignment.topCenter,
+              alignment: Alignment.topCenter  ,
               child: Container(
                 height: constraints.maxHeight * 0.4,
                 decoration: const BoxDecoration(
@@ -131,8 +131,12 @@ class Body extends StatelessWidget {
                           width: 1.0,
                         ),
                       ),
-                      child: const TextField(
+                      child: TextField(
+                        // obscureText: controller.obsecureText.value,
                         decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                            icon: ,
+                          ),
                           hintText: 'Password',
                           contentPadding: EdgeInsets.only(left: 10, top: 7),
                           hintStyle: TextStyle(
@@ -182,7 +186,7 @@ class Body extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Dashboard(),
+                            builder: (context) => const Home(),
                           ),
                         );
                       },

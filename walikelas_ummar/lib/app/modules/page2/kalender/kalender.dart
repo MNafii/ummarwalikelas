@@ -36,6 +36,7 @@ class _CalendarPageState extends State<Kalender> {
           padding: const EdgeInsets.only(top: 26, bottom: 40),
           child: Align(
             alignment: Alignment.centerRight,
+<<<<<<< HEAD
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -54,6 +55,14 @@ class _CalendarPageState extends State<Kalender> {
                       color: const Color(0xff9F9F9F)),
                 ),
               ],
+=======
+            child: Text(
+              'kalender Pendidikan',
+              style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.black),
+>>>>>>> 1f6d68e2699d489d4b688f1c3f711bde127b9b84
             ),
           ),
         ),
@@ -91,17 +100,16 @@ class _CalendarPageState extends State<Kalender> {
             width: MediaQuery.of(context).size.width,
             // height: 300,
             child: TableCalendar(
-              // onDayLongPressed: ,
               calendarStyle: CalendarStyle(
                 todayDecoration: BoxDecoration(
                   color: AppColor.secondPrimary,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(10),
+                  shape: BoxShape.circle,
+                  // borderRadius: BorderRadius.circular(10),
                 ),
                 isTodayHighlighted: true,
                 selectedDecoration: BoxDecoration(
                   color: AppColor.primary,
-                  shape: BoxShape.rectangle,
+                  shape: BoxShape.circle,
                   // borderRadius: BorderRadius.circular(5),
                 ),
               ),

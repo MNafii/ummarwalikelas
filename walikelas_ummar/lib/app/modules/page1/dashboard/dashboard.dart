@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:walikelas_ummar/app/modules/Siswa/siswa.dart';
 import 'package:walikelas_ummar/app/modules/page2/agenda/agenda.dart';
 import 'package:walikelas_ummar/app/modules/page2/kalender/kalender.dart';
 import 'package:walikelas_ummar/app/modules/page2/pengumuman/pengumuman.dart';
@@ -20,11 +21,11 @@ class Dashboard extends StatelessWidget {
     String formattedDate = DateFormat('EEEE , dd MMMM yyyy').format(now);
     return Scaffold(
       // bottomNavigationBar: BottomNavigationPage(),
-      body: ListView(
-        shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 28),
-        children: [
+        body: ListView(
+          shrinkWrap: true,
+          physics: BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 28),
+          children: [
           // user
           Container(
             margin: EdgeInsets.only(bottom: 16),
@@ -287,11 +288,10 @@ class Dashboard extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) => nilaidasar()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Siswa()),
+                      );
                     },
                     child: Container(
                       width: 70,
