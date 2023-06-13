@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walikelas_ummar/app/modules/page interface/introduction/introduction.dart';
 import 'package:walikelas_ummar/app/modules/page2/tugas/belumAdaTugas/tugassiswa.dart';
-import 'package:walikelas_ummar/tes.dart';
 
 // import 'package:walikelas_ummar/app/modules/home/home.dart';
 void main() {

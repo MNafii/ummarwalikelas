@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
         return Column(
           children: [
             Align(
-              alignment: Alignment.topCenter  ,
+              alignment: Alignment.topCenter,
               child: Container(
                 height: constraints.maxHeight * 0.4,
                 decoration: const BoxDecoration(
@@ -131,12 +131,8 @@ class Body extends StatelessWidget {
                           width: 1.0,
                         ),
                       ),
-                      child: TextField(
-                        // obscureText: controller.obsecureText.value,
+                      child: const TextField(
                         decoration: InputDecoration(
-                          suffixIcon: IconButton(
-                            icon: ,
-                          ),
                           hintText: 'Password',
                           contentPadding: EdgeInsets.only(left: 10, top: 7),
                           hintStyle: TextStyle(

@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:walikelas_ummar/app/color/app_color.dart';
+import 'package:walikelas_ummar/app/modules/page2/tugas/adaTugas/detailSiswaMengerjakan/detailSiswaMengerjakan.dart';
+import 'package:walikelas_ummar/app/modules/page2/tugas/tugas.dart';
 
 class TambahTugas extends StatelessWidget {
   const TambahTugas({super.key});
@@ -23,11 +26,11 @@ class TambahTugas extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Pembayaran',
+                  'Tambah Tugas Siswa',
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w700,
                     fontSize: 18,
-                    color: Colors.black,
+                    color: Colors.grey,
                   ),
                 ),
                 Text(
@@ -56,8 +59,8 @@ class TambahTugas extends StatelessWidget {
             height: 30,
             child: InkWell(
                 onTap: () {
-                  // Navigator.push(context,
-                  //     // MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Tugas()));
                 },
                 child: Ink(
                   decoration: const ShapeDecoration(
@@ -93,6 +96,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   String? selectedValue;
 
+  // ignore: unused_field
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
 
@@ -102,6 +106,7 @@ class _BodyState extends State<Body> {
     super.dispose();
   }
 
+  // ignore: unused_element
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -193,86 +198,85 @@ class _BodyState extends State<Body> {
             const SizedBox(height: 30),
             Row(
               children: [
-                Expanded(
-                  child: GestureDetector(
-                    child: Container(
-                      width: 58,
-                      height: 34,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color(0xff8F4552),
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
+                GestureDetector(
+                  child: Container(
+                    width: 58,
+                    // height: 34 ,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: const Color(0xff8F4552),
+                        width: 1,
                       ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              alignment: Alignment.centerRight,
-                              padding: const EdgeInsets.only(right: 10),
-                              child: DropdownButton<String?>(
-                                value: selectedValue,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedValue = value;
-                                  });
-                                },
-                                hint: const Text('10'),
-                                underline: const SizedBox(),
-                                alignment: Alignment.center,
-                                items: [].map<DropdownMenuItem<String?>>((e) {
-                                  return DropdownMenuItem(
-                                    // ignore: sort_child_properties_last
-                                    child: Text(e.toString()),
-                                    value: e,
-                                  );
-                                }).toList(),
-                              ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.only(right: 10),
+                            child: DropdownButton<String?>(
+                              value: selectedValue,
+                              onChanged: (value) {
+                                setState(() {
+                                  selectedValue = value;
+                                });
+                              },
+                              hint: const Text('10'),
+                              underline: const SizedBox(),
+                              alignment: Alignment.center,
+                              items: [].map<DropdownMenuItem<String?>>((e) {
+                                return DropdownMenuItem(
+                                  // ignore: sort_child_properties_last
+                                  child: Text(e.toString()),
+                                  value: e,
+                                );
+                              }).toList(),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
                 const SizedBox(width: 10),
-                Container(
-                  width: 255,
-                  height: 34,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: const Color(0xff8F4552),
-                      width: 1,
+                SizedBox(
+                  // margin: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Container(
+                    width: 250,
+                    // height: 34,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: const Color(0xff8F4552),
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: const [
-                      SizedBox(width: 10),
-                      Icon(Icons.search, color: Color(0xff8F4552)),
-                      SizedBox(width: 10),
-                      Expanded(
-                        child: Align(
-                          alignment: Alignment.centerLeft,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              contentPadding:
-                                  EdgeInsets.symmetric(horizontal: 10),
-                              hintText: 'Pencarian',
+                    child: Row(
+                      children: const [
+                        SizedBox(width: 10),
+                        Icon(Icons.search, color: Color(0xff8F4552)),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Pencarian',
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
             Container(
-              margin: EdgeInsets.only(top: 15),
-              // height: mediaQueryHeight * 0.3,
+              margin: const EdgeInsets.only(top: 15),
+              height: mediaQueryHeight * 0.3,
               // width: 100,
               child: PageView(
                 controller: _pageController,
@@ -286,12 +290,12 @@ class _BodyState extends State<Body> {
                     child: Table(
                       border: const TableBorder(
                         horizontalInside: BorderSide(
-                          color: Colors.black,
+                          color: Colors.grey,
                           width: 1.0,
                           style: BorderStyle.solid,
                         ),
                         bottom: BorderSide(
-                          color: Colors.black,
+                          color: Colors.grey,
                           width: 1.0,
                           style: BorderStyle.solid,
                         ),
@@ -311,7 +315,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   'No',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -326,7 +330,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Nama Siswa',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -341,7 +345,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   'Status Tugas',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -358,7 +362,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '1',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -373,7 +377,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Ahmad Amet ',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -407,7 +411,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '1',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -422,7 +426,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Ahmad Amet ',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -456,7 +460,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '1',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -471,7 +475,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Ahmad Amet ',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -505,7 +509,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '1',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -520,7 +524,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Ahmad Amet ',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -554,7 +558,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '2',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -569,7 +573,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Fatih Fahat',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -603,7 +607,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '3',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -618,7 +622,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Nur  maulidiyah',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -655,7 +659,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '3',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -670,7 +674,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Nur  maulidiyah',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -706,12 +710,12 @@ class _BodyState extends State<Body> {
                     child: Table(
                       border: const TableBorder(
                         horizontalInside: BorderSide(
-                          color: Colors.black,
+                          color: Colors.grey,
                           width: 1.0,
                           style: BorderStyle.solid,
                         ),
                         bottom: BorderSide(
-                          color: Colors.black,
+                          color: Colors.grey,
                           width: 1.0,
                           style: BorderStyle.solid,
                         ),
@@ -731,7 +735,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   'No',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -746,7 +750,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Nama Siswa',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -761,7 +765,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   'Status Tugas',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -778,7 +782,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '1',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -793,7 +797,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Ahmad Amet ',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -827,7 +831,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '2',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -842,7 +846,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Fatih Fahat',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -876,7 +880,7 @@ class _BodyState extends State<Body> {
                                 child: Text(
                                   '3',
                                   style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: Colors.grey,
                                     fontWeight: FontWeight.w300,
                                     fontSize: 15,
                                   ),
@@ -891,7 +895,7 @@ class _BodyState extends State<Body> {
                                     Text(
                                       'Nur  maulidiyah',
                                       style: GoogleFonts.poppins(
-                                        color: Colors.black,
+                                        color: Colors.grey,
                                         fontWeight: FontWeight.w300,
                                         fontSize: 15,
                                       ),
@@ -927,8 +931,8 @@ class _BodyState extends State<Body> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 15),
-              alignment: Alignment(0, 0),
+              margin: const EdgeInsets.only(top: 15),
+              alignment: const Alignment(0, 0),
               child: SmoothPageIndicator(
                 controller: _pageController,
                 count: 2,
@@ -941,7 +945,232 @@ class _BodyState extends State<Body> {
                   paintStyle: PaintingStyle.stroke,
                   strokeWidth: 1.5,
                   dotColor: Colors.grey,
-                  activeDotColor: Colors.indigo,
+                  activeDotColor: AppColor.primary,
+                ),
+              ),
+            ),
+
+            // container selanjutnya
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3), // Atur posisi bayangan
+                  ),
+                ],
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(10),
+                ),
+                color: Colors.white,
+              ),
+              child: Container(
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(right: 15),
+                                child: Icon(
+                                  Icons.list,
+                                  color: AppColor.primary,
+                                ),
+                              ),
+                              Text(
+                                'Tugas',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Icon(
+                                CupertinoIcons.clock_fill,
+                                size: 15,
+                                color: Colors.grey,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                '1/03/2023',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 13,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin:
+                          const EdgeInsets.only(top: 10, left: 20, bottom: 10),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Murajadah',
+                        style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                    Container(
+                        height: 41,
+                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.centerLeft,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: Colors.grey.shade400, // Warna border
+                            width: 2.0, // Lebar border
+                          ),
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            'Ayat 1 - 15',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                            ),
+                          ),
+                        )),
+                    Container(
+                        margin: const EdgeInsets.only(
+                            top: 10, left: 20, bottom: 10),
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Ziyadah',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                          ),
+                        )),
+                    Container(
+                        height: 41,
+                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.centerLeft,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: Colors.grey.shade400, // Warna border
+                            width: 2.0, // Lebar border
+                          ),
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            'Ayat 16 - 25',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                            ),
+                          ),
+                        )),
+                    Container(
+                        margin: const EdgeInsets.only(
+                            top: 10, left: 20, bottom: 10),
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Tilawah',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                          ),
+                        )),
+                    Container(
+                        height: 41,
+                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.centerLeft,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: Colors.grey.shade400, // Warna border
+                            width: 2.0, // Lebar border
+                          ),
+                        ),
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            'Ayat 16 - 25',
+                            style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                            ),
+                          ),
+                        )),
+                    Container(
+                        margin: const EdgeInsets.only(top: 20, bottom: 10),
+                        child: Text(
+                          'Jumlah Siswa yang di beri tugas',
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey.shade400,
+                            fontSize: 18,
+                          ),
+                        )),
+                    Container(
+                      height: 41,
+                      width: MediaQuery.of(context).size.width,
+                      alignment: Alignment.centerLeft,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                          color: Colors.grey.shade300, // Warna border
+                          width: 2.0, // Lebar border
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 10),
+                            child: Text(
+                              '3',
+                              style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                color: Colors.grey.shade400,
+                                fontSize: 15,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 10),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const DetailTugasSelesai()));
+                              },
+                              child: const Icon(
+                                Icons.error_outline,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )
