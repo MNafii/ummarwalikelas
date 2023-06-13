@@ -89,7 +89,7 @@ class _CalendarPageState extends State<Kalender> {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 300,
+            // height: 300,
             child: TableCalendar(
               // onDayLongPressed: ,
               calendarStyle: CalendarStyle(
@@ -126,8 +126,11 @@ class _CalendarPageState extends State<Kalender> {
               ),
               availableGestures: AvailableGestures.all,
               onDaySelected: (selectedDay, focusedDay) {
-                if (selectedDay.day == 5) {
-                  // Cek apakah tanggal yang dipilih adalah tanggal 5
+                // selectedDay.day == 7;
+                 
+                if (selectedDay.day == 10 &&
+                    selectedDay.month == 6 &&
+                    selectedDay.year == 2023) {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
@@ -164,7 +167,7 @@ class _CalendarPageState extends State<Kalender> {
                               ),
                               SizedBox(height: 15),
                               Text(
-                                '13 Maret 2023: Penilaian Akhir Semester Ganjil',
+                                '5 Maret 2023: Penilaian Akhir Semester Ganjil',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w800,
                                   fontSize: 15,
