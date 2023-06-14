@@ -93,15 +93,15 @@ class Introduction extends StatelessWidget {
             ),
           ),
           done: Container(
-            width: 120,
-            height: 50,
+            width: 100,
+            height: 60,
             decoration: BoxDecoration(
               color: const Color(0xffE08008),
               borderRadius: BorderRadius.circular(10),
             ),
             alignment: Alignment.center,
             child: Text(
-              'Lanjut',
+              'Mengerti',
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
                 color: Colors.white,

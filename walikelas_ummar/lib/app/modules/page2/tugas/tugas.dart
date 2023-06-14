@@ -159,7 +159,7 @@ class _CalendarPageState extends State<Tugas> {
                         height: 50.0,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.greenAccent,
+                          color: Color(0xff00FF1C),
                         ),
                       ),
                       const SizedBox(width: 8.0),
@@ -194,7 +194,7 @@ class _CalendarPageState extends State<Tugas> {
                       ),
                       const SizedBox(width: 8.0),
                       Text(
-                        ':  Belum Ada Tugas',
+                        ':   Belum ada tugas, Klik tanggal untuk  menambahkan',
                         style: GoogleFonts.poppins(
                             color: Colors.black,
                             fontWeight: FontWeight.w500,

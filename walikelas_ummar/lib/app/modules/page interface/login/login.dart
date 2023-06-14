@@ -97,7 +97,7 @@ class Body extends StatelessWidget {
                         ),
                         Container(
                           width: constraints.maxWidth * 0.75,
-                          height: 40,
+                          // height: 60,
                           decoration: BoxDecoration(
                             color: const Color(0xffEFEFEF),
                             borderRadius: BorderRadius.circular(10),
@@ -111,7 +111,6 @@ class Body extends StatelessWidget {
                               hintText: 'Email',
                               contentPadding: EdgeInsets.only(
                                 left: 10,
-                                bottom: 7,
                               ),
                               hintStyle: TextStyle(
                                 color: Colors.grey,
@@ -126,7 +125,6 @@ class Body extends StatelessWidget {
                     ),
                     Container(
                       width: constraints.maxWidth * 0.75,
-                      height: 40,
                       decoration: BoxDecoration(
                         color: const Color(0xffEFEFEF),
                         borderRadius: BorderRadius.circular(10),
@@ -233,7 +231,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
           onPressed: _togglePasswordVisibility,
         ),
         hintText: 'Password',
-        contentPadding: const EdgeInsets.only(left: 10, top: 7),
+        contentPadding: EdgeInsets.all(10),
         hintStyle: const TextStyle(
           color: Colors.grey,
           fontWeight: FontWeight.w500,

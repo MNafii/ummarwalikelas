@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:walikelas_ummar/app/modules/page1/profile/profile.dart';
@@ -71,12 +72,14 @@ class _HomeState extends State<Home> {
               onTabChange: _onItemTapped,
               tabs: const [
                 GButton(
-                  icon: Icons.home,
+                  icon: CupertinoIcons.home,
                   text: 'Home',
+                  iconColor: Colors.black,
                 ),
                 GButton(
-                  icon: Icons.person,
+                  icon: CupertinoIcons.person,
                   text: 'Profile Ortu',
+                  iconColor: Colors.black,
                 ),
               ],
             ),

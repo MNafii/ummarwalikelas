@@ -10,6 +10,7 @@ class Pengumuman extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
@@ -81,7 +82,7 @@ class Pengumuman extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 label: Text(
-                  'Cari...',
+                  'Pencarian',
                   style: GoogleFonts.poppins(
                     color: Colors.grey,
                   ),
@@ -91,7 +92,7 @@ class Pengumuman extends StatelessWidget {
                     color: Color(0xff8F4552),
                     width: 2.0,
                   ),
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 contentPadding: const EdgeInsets.only(left: 10),
                 prefixIcon: const Padding(

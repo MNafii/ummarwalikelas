@@ -31,6 +31,7 @@ class _CalendarPageState extends State<Kalender> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         toolbarHeight: 100,
@@ -38,24 +39,12 @@ class _CalendarPageState extends State<Kalender> {
           padding: const EdgeInsets.only(top: 26, bottom: 40),
           child: Align(
             alignment: Alignment.centerRight,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  'Tugas',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 18,
-                      color: Colors.black),
-                ),
-                Text(
-                  'Kelas 5',
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 13,
-                      color: const Color(0xff9F9F9F)),
-                ),
-              ],
+            child: Text(
+              'Kalender Pendidikan',
+              style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18,
+                  color: Colors.black),
             ),
           ),
         ),
@@ -234,7 +223,7 @@ class _CalendarPageState extends State<Kalender> {
                       height: 50.0,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.redAccent,
+                        color: Color(0xff00FF1C),
                       ),
                     ),
                     const SizedBox(width: 8.0),
@@ -254,7 +243,7 @@ class _CalendarPageState extends State<Kalender> {
                       height: 50.0,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.blueAccent,
+                        color: Color(0xff7380FF),
                       ),
                     ),
                     const SizedBox(width: 8.0),
