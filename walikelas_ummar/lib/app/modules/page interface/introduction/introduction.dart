@@ -93,8 +93,8 @@ class Introduction extends StatelessWidget {
             ),
           ),
           done: Container(
-            width: 100,
-            height: 60,
+            // width: 100,
+            height: 40,
             decoration: BoxDecoration(
               color: const Color(0xffE08008),
               borderRadius: BorderRadius.circular(10),
@@ -105,7 +105,7 @@ class Introduction extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
                 color: Colors.white,
-                fontSize: 14,
+                fontSize: 12,
               ),
             ),
           ),
